@@ -3,8 +3,12 @@
 
     $stmt1 = $pdo->prepare("SELECT * FROM restaurants WHERE Restaurant_ID = ?");
     $stmt1->execute([urldecode($_GET["restid"])]);
+
     $stmt2 = $pdo->prepare("SELECT * FROM menu WHERE Restaurant_ID = ?");
     $stmt2->execute([urldecode($_GET["restid"])]);
+
+    $stmt3 = $pdo->prepare("SELECT * FROM reviews WHERE Restaurant_ID = ?");
+    $stmt3->execute([urldecode($_GET["restid"])]);
 
     $rest = $stmt1->fetch();
 
@@ -21,6 +25,18 @@
         echo "<p class='food_details'>" . $row["Category"] . "</p>";
         echo "<p class='food_details'>$" . $row["Price"] . "</p>";
         echo "<p class='food_desc'>" . $row["Description"] . "</p>";
+    }
+
+    while($row = $stmt3->fetch()) {
+        echo "<h3 class='review_title'>" . $rows["Title"] . "</h3>";
+        echo "<p class='review_cust'><a href='customer_details.php?custuser=" 
+            . urlencode($row["Customer_user"]) . "'>by @" . $row["Customer_name"] . "</a></p>";
+        echo "<p class='review_details'>" . $row["Month"] . "/" . $row["Day"] . "/"
+            . $row["Year"] . "</p>";
+        echo "<p class='review_details'>Price: " . $row["Price_rating"] . "/5</p>";
+        echo "<p class='review_details'>Food: " . $row["Food_rating"] . "/5</p>";
+        echo "<p class='review_details'>Service: " . $row["Service_rating"] . "/5</p>";
+        echo "<p class='review_desc'>" . $row["Description"] . "</p>";
     }
 ?>
 <html>
