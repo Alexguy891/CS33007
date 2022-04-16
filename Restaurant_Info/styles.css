@@ -1,4 +1,4 @@
-.rest_name {
+.rest_name, .cust_user {
     text-align: center;
     font-weight: bold;
 }
@@ -7,7 +7,6 @@
     text-align: center;
 }
 
-.food_details {
-    text-align: center;
+.cust_details, .food_details, .review_details {
+    text-align: left;
 }
-

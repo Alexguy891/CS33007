@@ -21,7 +21,6 @@
     while($row = $stmt2->fetch()) {
         echo "<h3 class='food_name'><a href='food_details.php?foodid=" 
             . urlencode($row["Food_ID"]) . "'>" . $row["Food_name"] . "</a></h3>";
-        echo "<p class='food_details'>" . $row["Food_name"] . "</p>";
         echo "<p class='food_details'>" . $row["Category"] . "</p>";
         echo "<p class='food_details'>$" . $row["Price"] . "</p>";
         echo "<p class='food_desc'>" . $row["Description"] . "</p>";
@@ -36,7 +35,7 @@
         echo "<p class='review_details'>Price: " . $row["Price_rating"] . "/5</p>";
         echo "<p class='review_details'>Food: " . $row["Food_rating"] . "/5</p>";
         echo "<p class='review_details'>Service: " . $row["Service_rating"] . "/5</p>";
-        echo "<p class='review_desc'>" . $row["Description"] . "</p>";
+        echo "<p class='review_desc'>" . $row["Description"] . "</p><br>";
     }
 ?>
 <html>
