@@ -12,10 +12,4 @@ catch(PDOException $error) {
     echo "Connection failed";
 }
 
-function query($text) {
-    $sql = $pdo -> prepare($text);
-    $sql -> execute();
-    $result = $select ->fetch();
-    return $result;
-}
 ?>
