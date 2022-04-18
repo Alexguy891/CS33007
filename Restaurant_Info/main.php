@@ -1,15 +1,15 @@
 <?php
     require "config.php";
 
-    $stmt = $pdo->query("SELECT Restaurant_ID, Restaurant_Name, Type, 
-        Service, Website FROM restaurants");
+    $stmt = $pdo->query("SELECT rest_id, rest_name, type, 
+        service, website_url, rest_desc FROM Restaurants");
 
     while($row = $stmt->fetch()) {
         echo "<h2 class='rest_name'><a href='rest_details.php?restid="
-            . urlencode($row["Restaurant_ID"]) . "'>" . $row["Restaurant_Name"] . "</a></h2>";
-        echo "<p class = 'rest_details'>" . $row["Description"] . "</p>";
-        echo "<p class = 'rest_details'>" . $row["Type"] . "</p>";
-        echo "<p class = 'rest_details'>" . $row["Service"] . "</p><br><br>";
+            . urlencode($row["rest_id"]) . "'>" . $row["rest_name"] . "</a></h2>";
+        echo "<p class = 'rest_details'>" . $row["rest_desc"] . "</p>";
+        echo "<p class = 'rest_details'>" . $row["type"] . "</p>";
+        echo "<p class = 'rest_details'>" . $row["service"] . "</p><br><br>";
     }
 ?>
 <html>
