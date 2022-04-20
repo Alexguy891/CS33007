@@ -3,8 +3,7 @@
     require "../config.php";
 
     $stmt = $pdo->prepare("SELECT rest_id, rest_name FROM Restaurants WHERE rest_id = ?");
-    $id = (isset($_GET['id']) ? $_GET['id'] : '');
-    $stmt->execute([$id]);
+    $stmt->execute([$_GET["restid"]]);
     $rest = $stmt->fetch();
 
     echo "<h1>Add review for " . $rest["rest_name"] . "!</h1>";
