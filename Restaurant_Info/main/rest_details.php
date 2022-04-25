@@ -11,7 +11,8 @@
     $stmt3->execute([urldecode($_GET["restid"])]);
 
     $rest = $stmt1->fetch();
-    
+    echo "<a href='../main/main.php'>Home</a><br>";
+
     echo "<a href='../edit/rest_edit.php?restid=" . $_GET["restid"] . "'>Click to edit restaurant details</a>";
     echo "<h1 class='rest_name'>" . $rest["rest_name"] . "</h3>";
     echo "<p class='rest_details'><a href='" . $rest["website_url"] . "'>". $rest["website_url"]
@@ -22,6 +23,8 @@
          . ", " . $rest["rest_state"] . " " . $rest["rest_zip"];
 
     echo "<br><h2 class='section_title'>Menu</h2>";
+    $restid = $_GET["restid"];
+    echo "<a href='../add/add_food.php?restid=" . urlencode($restid) . "'>Click here to add food</a><br>";
 
     while($row = $stmt2->fetch()) {
         echo "<h3 class='food_name'><a href='food_details.php?foodid=" 

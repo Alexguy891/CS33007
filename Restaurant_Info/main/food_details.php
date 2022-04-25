@@ -5,6 +5,7 @@
     $stmt1->execute([urldecode($_GET["foodid"])]);
 
     $food = $stmt1->fetch();
+    echo "<a href='../main/main.php'>Home</a><br>";
 
     echo "<a href='../edit/food_edit.php?foodid=" . $_GET["foodid"] . "'>Click to edit food details</a>";
     echo "<h1 class='food_name'>" . $food["food_name"] . "</h1>";

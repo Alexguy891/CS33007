@@ -5,6 +5,7 @@
     $stmt1->execute([urldecode($_GET["custuser"])]);
 
     $cust = $stmt1->fetch();
+    echo "<a href='../main/main.php'>Home</a><br>";
 
     echo "<a href='../edit/cust_edit.php?custuser=" . $_GET["custuser"] . "'>Click to edit customer details</a>";
     echo "<h1 class='cust_user'>@" . $cust["user_id"] . "</h1>";

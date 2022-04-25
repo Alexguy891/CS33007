@@ -37,6 +37,7 @@
     }
 
     $restid = $_POST[ "rest_id"];
-    echo "<a href='../add/add_rest.php?=" . urlencode($restid) . "'>Click here to add more food.</a><br>";
-    echo "<a href='../main/main.php'>Click here to return to the main page.</a>";
+    echo "<a href='../add/add_food.php?restid=" . urlencode($restid) . "'>Click here to add more food.</a><br>";
+    echo "<a href='../main/main.php'>Click here to return to the main page.</a><br>";
+    echo "<a href='../main/rest_details.php?foodid=" . $_POST["rest_id"] . "'>Click here to return to the restaurant details page.</a>";
 ?>

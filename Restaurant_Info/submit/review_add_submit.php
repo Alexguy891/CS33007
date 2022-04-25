@@ -56,6 +56,6 @@
     }
 
     $restid = $_POST[ "rest_id"];
-    echo "<a href='../add/add_review.php?=" . urlencode($restid) . "'>Click here to add another review.</a><br>";
+    echo "<a href='../add/add_review.php?restid=" . urlencode($restid) . "'>Click here to add another review.</a><br>";
     echo "<a href='../main/main.php'>Click here to return to the main page.</a>";
 ?>
